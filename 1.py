@@ -1,5 +1,3 @@
-import json
-
 def get_kcal_per_elf():
     elfs = {}
     i = 1
