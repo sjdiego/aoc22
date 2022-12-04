@@ -2,7 +2,7 @@ def get_kcal_per_elf():
     elfs = {}
     i = 1
 
-    with open("input-1.txt", "r") as file:
+    with open("inputs/1.txt", "r") as file:
         for line in file:
             if not i in elfs:
                 elfs[i] = 0

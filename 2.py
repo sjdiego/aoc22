@@ -2,20 +2,13 @@
 Advent of Code 2022
 Puzzle 2
 """
+from helpers import getInput
 
 ROCK, PAPER, SCISSOR = "ROCK", "PAPER", "SCISSOR"
 
 LOST_GAMES = {ROCK: SCISSOR, PAPER: ROCK, SCISSOR: PAPER}
 WON_GAMES = {ROCK: PAPER, PAPER: SCISSOR, SCISSOR: ROCK}
 
-
-def get_strategy():
-    strategy = []
-    with open("input-2.txt", "r") as file:
-        for line in file:
-            strategy.append(line.strip())
-
-    return strategy
 
 def get_player_movements(game, cheat):
     opponent = game[0]
@@ -66,7 +59,7 @@ def calculate_victory_points(my_score, opponent, response):
 def game(cheat=False):
     total_points = 0
 
-    for game in get_strategy():
+    for game in getInput(2):
         my_score = 0
 
         opponent, response = get_player_movements(game, cheat)
