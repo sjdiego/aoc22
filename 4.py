@@ -12,6 +12,7 @@ def getRange(elf: list) -> set:
     return set(range(firstSector, lastSector+1))
 
 overlaps = 0
+overlaps2 = 0
 
 for section in getInput(4):
     firstElfRange = getRange(section.split(",")[0])
@@ -20,4 +21,8 @@ for section in getInput(4):
     if firstElfRange.issubset(secondElfRange) or secondElfRange.issubset(firstElfRange):
         overlaps += 1
 
+    if not firstElfRange.isdisjoint(secondElfRange) or not secondElfRange.isdisjoint(firstElfRange):
+        overlaps2 += 1
+
 print(overlaps)
+print(overlaps2)
